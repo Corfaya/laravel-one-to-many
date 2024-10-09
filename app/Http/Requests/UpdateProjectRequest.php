@@ -27,7 +27,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'name' => ['required', Rule::unique('projects')->ignore($this->project), 'max:50'],
             'date_of_upload' => ['required'],
-            'stack' => ['required'],
+            'type_id' => [Rule::exists('types','id')],
             'description' => ['nullable'],
             'preview' => ['nullable']
         ];
@@ -37,6 +37,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'name.required' => 'Questo campo è obbligatorio',
             'name.max' => 'Può contenere al massimo :max caratteri',
+            'type_id.exists' => 'La categoria selezionata non esiste',
             'date_of_upload.required' => 'Questo campo è obbligatorio',
             'stack.required' => 'Questo campo è obbligatorio'
         ];

@@ -25,9 +25,14 @@
                     </div>
                     <div class="row gy-3">
                         <div class="col-12 col-md-6">
-                            <label class="form-label fw-bolder m-0 py-1" for="stack">Stack:</label>
-                            <input class="form-control @error('stack') is-invalid @enderror" type="text" value="{{old('stack', $project->stack)}}" placeholder="Stack you used" name="stack">
-                            @error('stack')
+                            <label class="form-label fw-bolder m-0 py-1" for="type">Di che tipo di lavoro si tratta</label>
+                            <select class="form-control" name="type_id" required>
+                                <option value="">-- Seleziona un tipo --</option>
+                                @foreach ($types as $type)
+                                    <option value="{{$type->id}}" @selected($type->id == old('type_id', $project->type ? $project->type->id : ''))>{{$type->name}}</option>
+                                @endforeach
+                            </select>
+                            @error('type')
                             <div class="text-danger">{{$message}}</div>
                         @enderror
                         </div>
