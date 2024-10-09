@@ -14,4 +14,8 @@ class Project extends Model
     public static function generateSlug($title) {
         return Str::slug($title, '-');
     }
+    // appartenenza a tabella types
+    public function type() {
+        return $this->belongsTo(Type::class);
+    }
 }
