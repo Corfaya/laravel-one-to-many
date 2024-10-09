@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->date('date_of_upload');
-            $table->text('stack');
             $table->string('preview')->default('https://placehold.co/500x500?text=Anteprima+mancante')->nullable();
             $table->text('description')->nullable();
             $table->string('slug');
