@@ -17,7 +17,7 @@ return new class extends Migration
             // colonna
             $table->unsignedBigInteger('type_id')->nullable()->after('id');
             // fk
-            $table->foreign('type_id')->refereences('id')->on('types');
+            $table->foreign('type_id')->references('id')->on('types');
         });
     }
 
@@ -29,7 +29,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            //
+            $table->dropForeign('projects_type_id_foreign');
+            $table->dropColumn('type_id');
         });
     }
 };
