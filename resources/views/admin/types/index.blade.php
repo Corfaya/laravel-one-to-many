@@ -25,9 +25,8 @@
                             <tr>
                                 <td class="fw-bold">{{$type->id}}</td>
                                 <td class="text-capitalize fst-italic">{{$type->name}}</td>
-                                <td class="d-flex align-items-center">
-                                    <a href="" class="btn btn-sm btn-primary"><i class="bi bi-eyeglasses"></i></a>   
-                                    <a href="" class="btn btn-sm btn-warning mx-2">
+                                <td class="d-flex align-items-center">  
+                                    <a href="{{route('admin.types.edit', ['type' => $type->id])}}" class="btn btn-sm btn-warning mx-2">
                                         <i class="bi bi-pencil"></i>
                                     </a>
                                     <form action="" method="POST">
