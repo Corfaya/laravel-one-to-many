@@ -32,9 +32,6 @@
                                     <option value="{{$type->id}}" @selected($type->id == old('type_id', $project->type ? $project->type->id : ''))>{{$type->name}}</option>
                                 @endforeach
                             </select>
-                            @error('type')
-                            <div class="text-danger">{{$message}}</div>
-                        @enderror
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="project-box-img mt-2">

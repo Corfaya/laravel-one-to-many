@@ -24,7 +24,15 @@ class UpdateTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:150',
+            'type_id' => 'nullable'
+        ];
+    }
+
+    public function message() {
+        return [
+            'name.required' => 'Questo campo è obbligatorio',
+            'name.max' => 'Deve contenere :max caratteri'
         ];
     }
 }

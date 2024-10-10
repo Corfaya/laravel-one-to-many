@@ -31,9 +31,6 @@
                                     <option value="{{$type->id}}" @selected($type->id == old('type_id'))>{{$type->name}}</option>
                                 @endforeach
                             </select>
-                            @error('type_id')
-                            <div class="text-danger">{{$message}}</div>
-                        @enderror
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label fw-bolder m-0 py-1" for="preview">Preview URL</label>
